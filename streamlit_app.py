@@ -15,7 +15,7 @@ with st.sidebar:
             sac.MenuItem(type='divider'),
             sac.MenuItem('Start', icon='box-fill', children=[
                 sac.MenuItem('Upload', icon='upload'),
-                sac.MenuItem('Result', icon='result'),           
+                sac.MenuItem('Result', icon='Receipt'),           
                 sac.MenuItem('Accuracy', icon='score'),
                 sac.MenuItem('About', icon='about'),]),
             sac.MenuItem(type='divider'),
