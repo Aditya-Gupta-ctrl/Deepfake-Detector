@@ -13,22 +13,15 @@ with st.sidebar:
         selected = sac.menu([
             sac.MenuItem('Introduction', icon='house-fill'),
             sac.MenuItem(type='divider'),
-            sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem('First Program'),
-                sac.MenuItem('Syntax & Basic'),           
+            sac.MenuItem('Start', icon='box-fill', children=[
+                sac.MenuItem('Upload', icon='upload'),
+                sac.MenuItem(''),           
                 sac.MenuItem('Variable'),
                 sac.MenuItem('Input and Output'),
-                sac.MenuItem('Data Types'),
-                sac.MenuItem('Operators'),
-                sac.MenuItem('Conditional Statement'),
-                sac.MenuItem('Loops'),
-                sac.MenuItem('Function'),
-            ]),
-            sac.MenuItem('Cheatsheet', icon='table'),
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('Download Python', icon='download', description='Latest Version', href='https://www.python.org/downloads/'),
-                sac.MenuItem('Download VS Code', icon='terminal', href='https://code.visualstudio.com/download'),
+                sac.MenuItem('Source Code', icon='download', description='Latest Version', href='https://github.com/Aditya-Gupta-ctrl/Deepfake-Detector/edit/master/streamlit_app.py'),
+                sac.MenuItem(icon='terminal'),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
     
