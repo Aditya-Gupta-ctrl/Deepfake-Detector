@@ -7,7 +7,6 @@ import tempfile
 import numpy as np
 
 
-
 #Tab Menu
 with st.sidebar:
         selected = sac.menu([
