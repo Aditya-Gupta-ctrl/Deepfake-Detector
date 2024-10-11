@@ -17,7 +17,7 @@ with st.sidebar:
                 sac.MenuItem('Upload', icon='upload'),
                 sac.MenuItem(''),           
                 sac.MenuItem('Variable'),
-                sac.MenuItem('Input and Output'),])
+                sac.MenuItem('Input and Output'),]),
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
                 sac.MenuItem('Source Code', icon='download', description='Latest Version', href='https://github.com/Aditya-Gupta-ctrl/Deepfake-Detector/edit/master/streamlit_app.py'),
