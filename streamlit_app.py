@@ -2,7 +2,6 @@ import streamlit as st
 import streamlit_antd_components as sac
 from PIL import Image, ImageDraw
 import io
-
 import numpy
 import tempfile
 import numpy as np
