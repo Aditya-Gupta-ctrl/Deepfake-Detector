@@ -3,6 +3,7 @@ import streamlit_antd_components as sac
 from PIL import Image, ImageDraw
 import io
 import cv2
+import numpy
 import tempfile
 import numpy as np
 
