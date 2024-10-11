@@ -28,6 +28,7 @@ if selected == 0:
         sac.alert(label='Under Working', description='', banner=True, icon=True, closable=True)
     
 if selected == 3:
+        
         # Create a Streamlit app
         st.title("Image and Video Input")
         
