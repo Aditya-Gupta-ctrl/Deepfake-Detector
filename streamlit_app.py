@@ -33,7 +33,7 @@ with st.sidebar:
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
     
-if selected == 1:
+if selected == 0:
         # Create a Streamlit app
         st.title("Image and Video Input")
         
