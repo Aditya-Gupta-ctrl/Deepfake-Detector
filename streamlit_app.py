@@ -3,6 +3,7 @@ import streamlit_antd_components as sac
 from PIL import Image, ImageDraw
 import io
 import cv2
+import tempfile
 import numpy as np
 
 
@@ -61,3 +62,27 @@ if selected == 2:
         # Display the uploaded video
         if video_file is not None:
             display_video(video_file)
+        
+
+
+        
+        # Create a file uploader for videos
+        st.header("Video Input")
+        video_file = st.file_uploader("Upload a video", type=["mp4", "avi", "mov"])
+        
+        # Create a temporary file to store the uploaded video
+        if video_file is not None:
+            tfile = tempfile.NamedTemporaryFile(delete=False)
+            tfile.write(video_file.read())
+        
+            # Open the video file using OpenCV
+            vf = cv2.VideoCapture(tfile.name)
+        
+            # Read and display the video frames
+            stframe = st.empty()
+            while vf.isOpened():
+                ret, frame = vf.read()
+                if not ret:
+                    break
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                stframe.image(gray)
