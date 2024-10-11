@@ -45,8 +45,10 @@ if selected == 0:
         
         # Define a function to display the uploaded video
         def display_video(video):
-            video_bytes = video.read()
-            st.video(video_bytes, caption="Uploaded Video")
+            import tempfile
+            with tempfile.NamedTemporaryFile(suffix='.mp4') as tmp:
+                tmp.write(video.read())
+                st.video(tmp.name, caption="Uploaded Video")
         
         # Create a file uploader for images
         st.header("Image Input")
