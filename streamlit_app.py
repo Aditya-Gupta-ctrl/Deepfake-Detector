@@ -23,6 +23,9 @@ with st.sidebar:
                 sac.MenuItem('Source Code', icon='download', description='Latest Version', href='https://github.com/Aditya-Gupta-ctrl/Deepfake-Detector/edit/master/streamlit_app.py'),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
+
+if selected == 0:
+        sac.alert(label='Under Working', description='', banner=True, icon=True, closable=True)
     
 if selected == 3:
         # Create a Streamlit app
