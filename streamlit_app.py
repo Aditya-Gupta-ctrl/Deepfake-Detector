@@ -15,13 +15,12 @@ with st.sidebar:
             sac.MenuItem(type='divider'),
             sac.MenuItem('Start', icon='box-fill', children=[
                 sac.MenuItem('Upload', icon='upload'),
-                sac.MenuItem(''),           
-                sac.MenuItem('Variable'),
-                sac.MenuItem('Input and Output'),]),
+                sac.MenuItem('Result'),           
+                sac.MenuItem('Accuracy'),
+                sac.MenuItem('About'),]),
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
                 sac.MenuItem('Source Code', icon='download', description='Latest Version', href='https://github.com/Aditya-Gupta-ctrl/Deepfake-Detector/edit/master/streamlit_app.py'),
-                sac.MenuItem(icon='terminal'),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
     
