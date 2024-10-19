@@ -5,29 +5,33 @@ import numpy as np
 
 # Set page config
 st.set_page_config(
-    page_title="kuch rang pyar ke",
+    page_title="chin Tapak dam dam",
     page_icon=":book:",
     layout="wide",
 )
 
+# Initialize session state for selected step
+if 'selected_step' not in st.session_state:
+    st.session_state.selected_step = 0
 
 # Step Navigation
 selected = sac.steps(
     items=[
-        sac.StepsItem(title='Step 1', subtitle='Upload', description='Image input'),
+        sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
         sac.StepsItem(title='Step 2'),
         sac.StepsItem(title='Step 3'),
+        sac.StepsItem(title='Step 4', disabled=True),
     ], 
-    variant='navigation', 
+    variant='navigation',
     color='grape',
     size='sm',
     return_index=True
 )
 
 # Check which step is selected
-if selected == 0:  # Adjusted index to match the third step (0-based index)
+if st.session_state.selected_step == 0:  # Adjusted index to match the first step (0-based index)
     # Create a Streamlit app
-    st.title("Image Upload aned Display App")
+    st.title("Image Upload and Display App")
 
     st.header("Image Input")
     
@@ -43,3 +47,29 @@ if selected == 0:  # Adjusted index to match the third step (0-based index)
     # Display the uploaded image
     if image_file is not None:
         display_image(image_file)
+
+    # Next button to go to the next step
+    if st.button("Next"):
+        st.session_state.selected_step += 1  # Move to the next step
+
+# Additional steps can be handled here
+if st.session_state.selected_step == 1:
+    st.title("Step 2")
+    st.write("This is the second step.")
+    
+    # Next button for Step 2
+    if st.button("Next"):
+        st.session_state.selected_step += 1  # Move to the next step
+
+if st.session_state.selected_step == 2:
+    st.title("Step 3")
+    st.write("This is the third step.")
+    
+    # Next button for Step 3
+    if st.button("Next"):
+        st.session_state.selected_step += 1  # Move to the next step
+
+# Step 4 can be added similarly
+if st.session_state.selected_step == 3:
+    st.title("Step 4")
+    st.write("This is the final step.")
