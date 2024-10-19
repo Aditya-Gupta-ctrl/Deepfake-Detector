@@ -15,13 +15,16 @@ if 'selected_step' not in st.session_state:
     st.session_state.selected_step = 0
 
 # Step Navigation
+step_titles = [
+    'Step 1', 
+    'Step 2', 
+    'Step 3', 
+    'Step 4'
+]
+
+# Create steps navigation
 selected = sac.steps(
-    items=[
-        sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
-        sac.StepsItem(title='Step 2'),
-        sac.StepsItem(title='Step 3'),
-        sac.StepsItem(title='Step 4', disabled=True),
-    ], 
+    items=[sac.StepsItem(title=title) for title in step_titles], 
     variant='navigation', 
     color='grape', 
     return_index=True,
@@ -31,7 +34,6 @@ selected = sac.steps(
 # Check which step is selected
 if st.session_state.selected_step == 0:  # First step
     st.title("Image Upload and Display App")
-
     st.header("Image Input")
     
     # Define a function to display the uploaded image
@@ -51,8 +53,7 @@ if st.session_state.selected_step == 0:  # First step
     if st.button("Next", key="next_button_1"):
         st.session_state.selected_step += 1  # Move to the next step
 
-# Step 2
-elif st.session_state.selected_step == 1:
+elif st.session_state.selected_step == 1:  # Step 2
     st.title("Step 2")
     st.write("This is the second step.")
     
@@ -60,8 +61,7 @@ elif st.session_state.selected_step == 1:
     if st.button("Next", key="next_button_2"):
         st.session_state.selected_step += 1  # Move to the next step
 
-# Step 3
-elif st.session_state.selected_step == 2:
+elif st.session_state.selected_step == 2:  # Step 3
     st.title("Step 3")
     st.write("This is the third step.")
     
@@ -69,7 +69,6 @@ elif st.session_state.selected_step == 2:
     if st.button("Next", key="next_button_3"):
         st.session_state.selected_step += 1  # Move to the next step
 
-# Step 4
-elif st.session_state.selected_step == 3:
+elif st.session_state.selected_step == 3:  # Step 4
     st.title("Step 4")
     st.write("This is the final step.")
