@@ -23,13 +23,16 @@ step_titles = [
 ]
 
 # Create steps navigation
-selected = sac.steps(
-    items=[sac.StepsItem(title=title) for title in step_titles], 
-    variant='navigation', 
-    color='grape', 
-    return_index=True,
-    current_index=st.session_state.selected_step  # Set the current index based on session state
-)
+try:
+    selected = sac.steps(
+        items=[sac.StepsItem(title=title) for title in step_titles], 
+        variant='navigation', 
+        color='grape', 
+        return_index=True,
+        current_index=st.session_state.selected_step  # Set the current index based on session state
+    )
+except Exception as e:
+    st.error(f"Error occurred while rendering steps: {e}")
 
 # Check which step is selected
 if st.session_state.selected_step == 0:  # First step
