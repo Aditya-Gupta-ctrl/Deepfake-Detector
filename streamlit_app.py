@@ -8,18 +8,17 @@ st.title("Image Upload and Display App")
 
 
 # Step Navigation
-with tab1:
-    selected = sac.steps(
-        items=[
-            sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
-            sac.StepsItem(title='Step 2'),
-            sac.StepsItem(title='Step 3'),
-            sac.StepsItem(title='Step 4', disabled=True),
-        ], 
-        variant='navigation', 
-        color='grape', 
-        return_index=True
-    )
+selected = sac.steps(
+    items=[
+        sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
+        sac.StepsItem(title='Step 2'),
+        sac.StepsItem(title='Step 3'),
+        sac.StepsItem(title='Step 4', disabled=True),
+    ], 
+    variant='navigation', 
+    color='grape', 
+    return_index=True
+)
 
 # Check which step is selected
 if selected == 2:  # Adjusted index to match the third step (0-based index)
