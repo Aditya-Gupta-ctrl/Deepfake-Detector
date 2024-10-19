@@ -7,15 +7,18 @@ import tempfile
 import numpy as np
 
 
-#Tab Menu
-with st.tabs:
+# Tab Menu
+with st.tabs(["Step Navigation"]):
     selected = sac.steps(
         items=[
-            sac.StepsItem(title='step 1', subtitle='extra msg', description='description text'),
-            sac.StepsItem(title='step 2'),
-            sac.StepsItem(title='step 3'),
-            sac.StepsItem(title='step 4', disabled=True),
-        ], variant='navigation', color='grape', return_index=True
+            sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
+            sac.StepsItem(title='Step 2'),
+            sac.StepsItem(title='Step 3'),
+            sac.StepsItem(title='Step 4', disabled=True),
+        ], 
+        variant='navigation', 
+        color='grape', 
+        return_index=True
     )
     
    
