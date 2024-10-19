@@ -30,21 +30,14 @@ if selected == 0:
 if selected == 3:
         
     # Create a Streamlit app
-    st.title("Image and Video Input")
+    st.title("Image Input")
     
     # Define a function to display the uploaded image
     def display_image(image):
         img = Image.open(image)
         img_array = np.array(img)
         st.image(img_array, caption="Uploaded Image")
-    
-    # Define a function to display the uploaded video
-    def display_video(video):
-        import tempfile
-        with tempfile.NamedTemporaryFile(suffix='.mp4') as tmp:
-            tmp.write(video.read())
-            st.video(tmp.name, caption="Uploaded Video")
-    
+
     # Create a file uploader for images
     st.header("Image Input")
     image_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
@@ -52,13 +45,7 @@ if selected == 3:
     if image_file is not None:
         display_image(image_file)
     
-    # Create a file uploader for videos
-    st.header("Video Input")
-    video_file = st.file_uploader("Upload a video", type=["mp4", "avi", "mov"])
-    # Display the uploaded video
-    if video_file is not None:
-        display_video(video_file)
-    
+
     
         
 
