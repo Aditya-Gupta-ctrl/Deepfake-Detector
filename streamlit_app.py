@@ -1,4 +1,4 @@
-import streamlit as st
+eimport streamlit as st
 import streamlit_antd_components as sac
 from PIL import Image, ImageDraw
 import io
@@ -8,7 +8,7 @@ import numpy as np
 
 
 #Tab Menu
-with st.sidebar:
+with st.tab:
     selected = sac.menu([
         sac.MenuItem('Introduction', icon='house-fill'),
         sac.MenuItem(type='divider'),
