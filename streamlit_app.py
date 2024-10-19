@@ -10,8 +10,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# Create a Streamlit app
-st.title("Image Upload and Display App")
 
 
 # Step Navigation
@@ -28,7 +26,9 @@ selected = sac.steps(
 )
 
 # Check which step is selected
-if selected == 2:  # Adjusted index to match the third step (0-based index)
+if selected == 0:  # Adjusted index to match the third step (0-based index)
+    # Create a Streamlit app
+    st.title("Image Upload aned Display App")
 
     st.header("Image Input")
     
