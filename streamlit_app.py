@@ -1,14 +1,16 @@
 import streamlit as st
 import streamlit_antd_components as sac
-from PIL import Image, ImageDraw
-import io
-import numpy
-import tempfile
+from PIL import Image
 import numpy as np
 
+# Create a Streamlit app
+st.title("Image Upload and Display App")
 
 # Tab Menu
-with st.tabs(["Step Navigation"]):
+tab1, tab2, tab3, tab4 = st.tabs(["Step Navigation", "Step 1", "Step 2", "Step 3"])
+
+# Step Navigation
+with tab1:
     selected = sac.steps(
         items=[
             sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
@@ -20,31 +22,21 @@ with st.tabs(["Step Navigation"]):
         color='grape', 
         return_index=True
     )
-    
-   
-    
-if selected == 3:
+
+# Check which step is selected
+if selected == 2:  # Adjusted index to match the third step (0-based index)
+    with tab3:
+        st.header("Image Input")
         
-    # Create a Streamlit app
-    st.title("Image Input")
-    
-    # Define a function to display the uploaded image
-    def display_image(image):
-        img = Image.open(image)
-        img_array = np.array(img)
-        st.image(img_array, caption="Uploaded Image")
+        # Define a function to display the uploaded image
+        def display_image(image):
+            img = Image.open(image)
+            img_array = np.array(img)
+            st.image(img_array, caption="Uploaded Image", use_column_width=True)
 
-    # Create a file uploader for images
-    st.header("Image Input")
-    image_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
-    # Display the uploaded image
-    if image_file is not None:
-        display_image(image_file)
-    
-
-    
+        # Create a file uploader for images
+        image_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
         
-
-
-        
-      
+        # Display the uploaded image
+        if image_file is not None:
+            display_image(image_file)
