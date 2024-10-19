@@ -22,9 +22,7 @@ with st.sidebar:
         ]),
     ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
 
-if selected == 0:
-    sac.alert(label='Under Working', description='Akash lundwani', banner=True, icon=True, closable=True)
-    
+   
     
 if selected == 3:
         
