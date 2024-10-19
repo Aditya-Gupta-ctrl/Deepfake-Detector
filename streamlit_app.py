@@ -5,7 +5,7 @@ import numpy as np
 
 # Set page config
 st.set_page_config(
-    page_title="Brain Tumor",
+    page_title="kuch Rang Pyar Ke",
     page_icon=":book:",
     layout="wide",
 )
@@ -17,6 +17,7 @@ selected = sac.steps(
         sac.StepsItem(title='Step 1', subtitle='Extra msg', description='Description text'),
         sac.StepsItem(title='Step 2'),
         sac.StepsItem(title='Step 3'),
+        sac.StepsItem(title='Step 4', disabled=True),
     ], 
     variant='navigation', 
     color='grape', 
@@ -25,9 +26,9 @@ selected = sac.steps(
 )
 
 # Check which step is selected
-if st.session_state.selected_step == 0:  # Adjusted index to match the first step (0-based index)
+if selected == 0:  # Adjusted index to match the third step (0-based index)
     # Create a Streamlit app
-    st.title("Image Upload and Display App")
+    st.title("Image Upload aned Display App")
 
     st.header("Image Input")
     
@@ -43,6 +44,3 @@ if st.session_state.selected_step == 0:  # Adjusted index to match the first ste
     # Display the uploaded image
     if image_file is not None:
         display_image(image_file)
-    # Next button for Step 2
-    if st.button("Next"):
-        st.session_state.selected += 1 
