@@ -37,6 +37,9 @@ if selected == 3:
         img = Image.open(image)
         img_array = np.array(img)
         st.image(img_array, caption="Uploaded Image")
+    # Display the uploaded image
+    if image_file is not None:
+        display_image(image_file)
     
     # Define a function to display the uploaded video
     def display_video(video):
@@ -44,6 +47,9 @@ if selected == 3:
         with tempfile.NamedTemporaryFile(suffix='.mp4') as tmp:
             tmp.write(video.read())
             st.video(tmp.name, caption="Uploaded Video")
+    # Display the uploaded video
+    if video_file is not None:
+        display_video(video_file)
     
     # Create a file uploader for images
     st.header("Image Input")
@@ -53,13 +59,7 @@ if selected == 3:
     st.header("Video Input")
     video_file = st.file_uploader("Upload a video", type=["mp4", "avi", "mov"])
     
-    # Display the uploaded image
-    if image_file is not None:
-        display_image(image_file)
     
-    # Display the uploaded video
-    if video_file is not None:
-        display_video(video_file)
         
 
 
