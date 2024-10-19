@@ -9,19 +9,15 @@ import numpy as np
 
 #Tab Menu
 with st.tabs:
-    selected = sac.menu([
-        sac.MenuItem('Introduction', icon='house-fill'),
-        sac.MenuItem(type='divider'),
-        sac.MenuItem('Start', icon='box-fill', children=[
-            sac.MenuItem('Upload', icon='upload'),
-            sac.MenuItem('Result', icon='receipt'),           
-            sac.MenuItem('About', icon='body-text'),]),
-        sac.MenuItem(type='divider'),
-        sac.MenuItem('link', type='group', children=[
-            sac.MenuItem('Source Code', icon='download', description='Latest Version', href='https://github.com/Aditya-Gupta-ctrl/Deepfake-Detector/edit/master/streamlit_app.py'),
-        ]),
-    ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
-
+    selected = sac.steps(
+        items=[
+            sac.StepsItem(title='step 1', subtitle='extra msg', description='description text'),
+            sac.StepsItem(title='step 2'),
+            sac.StepsItem(title='step 3'),
+            sac.StepsItem(title='step 4', disabled=True),
+        ], variant='navigation', color='grape', return_index=True
+    )
+    
    
     
 if selected == 3:
