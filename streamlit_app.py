@@ -23,7 +23,10 @@ selected = sac.steps(
     size='sm',
     return_index=True
 )
-
+# Initialize session state for selected step
+if 'selected_step' not in st.session_state:
+    st.session_state.selected = 0
+    
 # Check which step is selected
 if selected == 0:  # Adjusted index to match the third step (0-based index)
     # Create a Streamlit app
