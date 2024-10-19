@@ -22,8 +22,8 @@ selected = sac.steps(
         sac.StepsItem(title='Step 3'),
         sac.StepsItem(title='Step 4', disabled=True),
     ], 
-    variant='navigation',
-    color='grape',
+    variant='navigation', 
+    color='grape', 
     size='sm',
     return_index=True
 )
@@ -49,7 +49,7 @@ if st.session_state.selected_step == 0:  # Adjusted index to match the first ste
         display_image(image_file)
 
     # Next button to go to the next step
-    if st.button("Next"):
+    if st.button("Next", key="next_button_1"):
         st.session_state.selected_step += 1  # Move to the next step
 
 # Additional steps can be handled here
@@ -58,7 +58,7 @@ if st.session_state.selected_step == 1:
     st.write("This is the second step.")
     
     # Next button for Step 2
-    if st.button("Next"):
+    if st.button("Next", key="next_button_2"):
         st.session_state.selected_step += 1  # Move to the next step
 
 if st.session_state.selected_step == 2:
@@ -66,10 +66,9 @@ if st.session_state.selected_step == 2:
     st.write("This is the third step.")
     
     # Next button for Step 3
-    if st.button("Next"):
+    if st.button("Next", key="next_button_3"):
         st.session_state.selected_step += 1  # Move to the next step
 
-# Step 4 can be added similarly
 if st.session_state.selected_step == 3:
     st.title("Step 4")
     st.write("This is the final step.")
