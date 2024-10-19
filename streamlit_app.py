@@ -5,7 +5,7 @@ import numpy as np
 
 # Set page config
 st.set_page_config(
-    page_title="chin Tapak dam dam",
+    page_title="kuch rang pyar ke",
     page_icon=":book:",
     layout="wide",
 )
