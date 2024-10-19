@@ -8,7 +8,7 @@ import numpy as np
 
 
 #Tab Menu
-with st.tab:
+with st.tabs:
     selected = sac.menu([
         sac.MenuItem('Introduction', icon='house-fill'),
         sac.MenuItem(type='divider'),
