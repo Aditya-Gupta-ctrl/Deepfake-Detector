@@ -6,8 +6,6 @@ import numpy as np
 # Create a Streamlit app
 st.title("Image Upload and Display App")
 
-# Tab Menu
-tab1, tab2, tab3, tab4 = st.tabs(["Step Navigation", "Step 1", "Step 2", "Step 3"])
 
 # Step Navigation
 with tab1:
