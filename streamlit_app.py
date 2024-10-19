@@ -20,7 +20,8 @@ selected = sac.steps(
         sac.StepsItem(title='Step 4', disabled=True),
     ], 
     variant='navigation', 
-    color='grape', 
+    color='grape',
+    size='xs',
     return_index=True
 )
 
