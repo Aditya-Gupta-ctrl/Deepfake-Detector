@@ -24,13 +24,12 @@ selected = sac.steps(
     ], 
     variant='navigation', 
     color='grape', 
-    size='sm',
-    return_index=True
+    return_index=True,
+    current_index=st.session_state.selected_step  # Set the current index based on session state
 )
 
 # Check which step is selected
-if st.session_state.selected_step == 0:  # Adjusted index to match the first step (0-based index)
-    # Create a Streamlit app
+if st.session_state.selected_step == 0:  # First step
     st.title("Image Upload and Display App")
 
     st.header("Image Input")
@@ -52,8 +51,8 @@ if st.session_state.selected_step == 0:  # Adjusted index to match the first ste
     if st.button("Next", key="next_button_1"):
         st.session_state.selected_step += 1  # Move to the next step
 
-# Additional steps can be handled here
-if st.session_state.selected_step == 1:
+# Step 2
+elif st.session_state.selected_step == 1:
     st.title("Step 2")
     st.write("This is the second step.")
     
@@ -61,7 +60,8 @@ if st.session_state.selected_step == 1:
     if st.button("Next", key="next_button_2"):
         st.session_state.selected_step += 1  # Move to the next step
 
-if st.session_state.selected_step == 2:
+# Step 3
+elif st.session_state.selected_step == 2:
     st.title("Step 3")
     st.write("This is the third step.")
     
@@ -69,6 +69,7 @@ if st.session_state.selected_step == 2:
     if st.button("Next", key="next_button_3"):
         st.session_state.selected_step += 1  # Move to the next step
 
-if st.session_state.selected_step == 3:
+# Step 4
+elif st.session_state.selected_step == 3:
     st.title("Step 4")
     st.write("This is the final step.")
