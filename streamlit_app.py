@@ -43,3 +43,6 @@ if selected == 0:  # Adjusted index to match the third step (0-based index)
     # Display the uploaded image
     if image_file is not None:
         display_image(image_file)
+    # Next button for Step 2
+    if st.button("Next"):
+        st.session_state.selected += 1 
