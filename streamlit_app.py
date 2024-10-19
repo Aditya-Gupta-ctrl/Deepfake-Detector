@@ -15,7 +15,6 @@ with st.sidebar:
         sac.MenuItem('Start', icon='box-fill', children=[
             sac.MenuItem('Upload', icon='upload'),
             sac.MenuItem('Result', icon='receipt'),           
-            sac.MenuItem('Accuracy', icon='reception-3'),
             sac.MenuItem('About', icon='body-text'),]),
         sac.MenuItem(type='divider'),
         sac.MenuItem('link', type='group', children=[
