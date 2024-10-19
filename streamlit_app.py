@@ -3,6 +3,13 @@ import streamlit_antd_components as sac
 from PIL import Image
 import numpy as np
 
+# Set page config
+st.set_page_config(
+    page_title="chin Tapak dam dam",
+    page_icon=":book:",
+    layout="wide",
+)
+
 # Create a Streamlit app
 st.title("Image Upload and Display App")
 
