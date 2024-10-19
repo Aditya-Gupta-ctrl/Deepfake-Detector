@@ -23,18 +23,18 @@ with tab1:
 
 # Check which step is selected
 if selected == 2:  # Adjusted index to match the third step (0-based index)
-    with tab3:
-        st.header("Image Input")
-        
-        # Define a function to display the uploaded image
-        def display_image(image):
-            img = Image.open(image)
-            img_array = np.array(img)
-            st.image(img_array, caption="Uploaded Image", use_column_width=True)
 
-        # Create a file uploader for images
-        image_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
-        
-        # Display the uploaded image
-        if image_file is not None:
-            display_image(image_file)
+    st.header("Image Input")
+    
+    # Define a function to display the uploaded image
+    def display_image(image):
+        img = Image.open(image)
+        img_array = np.array(img)
+        st.image(img_array, caption="Uploaded Image", use_column_width=True)
+
+    # Create a file uploader for images
+    image_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
+    
+    # Display the uploaded image
+    if image_file is not None:
+        display_image(image_file)
