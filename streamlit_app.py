@@ -43,3 +43,6 @@ if selected == 0:  # Adjusted index to match the third step (0-based index)
     # Display the uploaded image
     if image_file is not None:
         display_image(image_file)
+
+if selected == 1:
+    st.title("Kam Chal Raha hai lawde please give me time babes")
