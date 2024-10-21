@@ -10,7 +10,6 @@ st.set_page_config(
     layout="wide",
 )
 
-
 # Step Navigation
 selected = sac.steps(
     items=[
@@ -44,5 +43,4 @@ if selected == 0:  # Adjusted index to match the third step (0-based index)
     if image_file is not None:
         display_image(image_file)
 
-if selected == 1:
-    st.title("Kam Chal Raha hai lawde please give me time babes")
+
